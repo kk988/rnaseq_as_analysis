@@ -23,10 +23,11 @@ use Getopt::Long qw( GetOptions );
 
 # Set defaults in args:
 my %args = ( 
-    "ref_fasta" => "abc",
-    "gtf_file" => "def",
-    "gtf_index_file" => "zyx",
-    "anno_file" => "ghi",
+    #"ref_fasta" => "abc",
+    #"gtf_file" => "def",
+    #"gtf_index_file" => "zyx",
+    #"anno_file" => "ghi",
+    "strand" => "unstranded",
     "output_dir" => getcwd
 );
 
@@ -45,6 +46,8 @@ Analysis::run_kallisto(\%args, \%samp);
 Analysis::run_rmats(\%args, \%samp, $read_len);
 Analysis::run_splicetools(\%args, \%samp);
 
+
+## FUNCTIONS
 
 sub get_args {
     my %args = @_;
