@@ -95,8 +95,8 @@ sub check_required_args {
 # Also assuming every sample has the same read_len
 sub get_read_len {
     my $samp = shift;
-    
-    my $fq = glob $samp->{ $samp->{$samp_list}->[0] }->{fq} . "/*fastq.gz";
+
+    my $fq = glob $samp->{ $samp->{samp_list}->[0] }->{fq}->[0] . "/*fastq.gz";
 
     my $fq_line = `zcat < $fq | sed '2q;d'`;
     chomp $fq_line;

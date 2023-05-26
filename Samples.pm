@@ -76,6 +76,8 @@ sub process_comparison_file {
     open(CF, '<', $comparison) or die $!;
     foreach my $line (<CF>){
         chomp $line;
+        $line =~ s/\r//g;
+        
         my ($c1, $c2) = split("\t", $line);
         
         if( ! exists $samp->{comps}->{$c1}){
