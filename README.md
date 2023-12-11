@@ -49,5 +49,8 @@ exp2ctrl	exp2test
 exp1ctrl	exp2ctrl
 ```
 
+## annotation_file
+Splicetools annotation file requires the 3rd column to be setup as `geneID_geneSymbol`. I basically just altered `gtf_index_file` in order to get this correct. 
+
 ## How tools are run
 Currently the tools are run by singularity using a docker container that is hardcoded into the code. Obviously if this code were to be developed more we could fix that, but until it's actually going to be used in the future, we shouldn't waste the time.
